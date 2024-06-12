@@ -25,10 +25,10 @@ public class CheckoutTest extends BaseTest {
     @Feature("CheckoutTest")
     @Description
     public void CheckoutTest() throws Exception {
+        validateInputFields();
         page.getInstance(Checkout.class).getFirstName().sendKeys(firstname);
         page.getInstance(Checkout.class).getLastName().sendKeys(lastname);
         page.getInstance(Checkout.class).getZip().sendKeys(Zip);
-        //validationCheck();
         page.getInstance(Checkout.class).getContinue().click();
 
         System.out.println(cartAddTest.titleTexts);
@@ -50,7 +50,6 @@ public class CheckoutTest extends BaseTest {
                 if (title.equals(compareTitle)){
                     softAssert.assertEquals(compareTitle,title);
                     break;}
-
             }
             Assert.assertTrue(true, "Match found for title: " + title);}
         for(String price: priceConfirmed){
@@ -58,7 +57,6 @@ public class CheckoutTest extends BaseTest {
                 if (price.equals(comparePrice)){
                     softAssert.assertEquals(comparePrice,price);
                     break;}
-
             }
             Assert.assertTrue(true, "Match found for title: " + price);}
         softAssert.assertAll();
@@ -68,5 +66,18 @@ public class CheckoutTest extends BaseTest {
 
         Assert.assertEquals(currentText, message, "Message mismatch");
         Assert.assertEquals(currentText2, message2, "Message mismatch");
+    }
+
+    public void validateInputFields() throws Exception {
+
+        page.getInstance(Checkout.class).getFirstName().clear();
+        page.getInstance(Checkout.class).getLastName().clear();
+        page.getInstance(Checkout.class).getZip().clear();
+        page.getInstance(Checkout.class).getContinue().click();
+        Assert.assertTrue(page.getInstance(Checkout.class).getError(), "Error for empty fields");
+
+        page.getInstance(Checkout.class).getFirstName().clear();
+        page.getInstance(Checkout.class).getLastName().clear();
+        page.getInstance(Checkout.class).getZip().clear();
     }
 }

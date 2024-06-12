@@ -22,6 +22,9 @@ public class Checkout extends BasePage {
     private final By finish = By.xpath("//*[@id=\"finish\"]");
     private final By confirmMessgae = By.xpath("//*[@id=\"checkout_complete_container\"]/h2");
     private final By confirmMessgae2 = By.className("complete-text");
+    private final By error = By.xpath("//*[@id=\"checkout_info_container\"]/div/form/div[1]/div[4]/h3");
+
+
 
     public WebElement getFirstName(){return elementWithWait(firstName,"visibility");}
     public WebElement getLastName(){return elementWithWait(lastName,"visibility");}
@@ -31,8 +34,13 @@ public class Checkout extends BasePage {
     public List<WebElement> getconfirmTitle(){return elementsWithWait(confirmTitle,"clickable");}
     public List<WebElement> getconfirmPrice(){return elementsWithWait(confirmPrice,"clickable");}
     public WebElement getFinish(){return elementWithWait(finish,"clickable");}
-    public WebElement getConfirmMEssage(){return elementWithWait(confirmMessgae,"clickable");}
-    public WebElement getConfirmMEssage2(){return elementWithWait(confirmMessgae2,"clickable");}
+    public WebElement getConfirmMEssage(){return elementWithWait(confirmMessgae,"visibility");}
+    public WebElement getConfirmMEssage2(){return elementWithWait(confirmMessgae2,"visibility");}
+    public boolean getError(){
+        WebElement w= elementWithWait(error,"visibility");
+        return w.isDisplayed();
+    }
+
 
 
 }
