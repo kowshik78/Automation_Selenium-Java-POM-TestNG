@@ -1,6 +1,8 @@
 package tests;
 
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,6 +22,8 @@ public class CheckoutTest extends BaseTest {
     public String message2="Your order has been dispatched, and will arrive just as fast as the pony can get there!";
 
     @Test
+    @Feature("CheckoutTest")
+    @Description
     public void CheckoutTest() throws Exception {
         page.getInstance(Checkout.class).getFirstName().sendKeys(firstname);
         page.getInstance(Checkout.class).getLastName().sendKeys(lastname);
@@ -34,6 +38,8 @@ public class CheckoutTest extends BaseTest {
 
     }
     @Test
+    @Feature("checkoutOverview")
+    @Description
     public void checkoutOverview() throws Exception{
 
         nameConfirmed.addAll(page.getInstance(Checkout.class).getconfirmTitle().stream().map(WebElement::getText).collect(Collectors.toList()));

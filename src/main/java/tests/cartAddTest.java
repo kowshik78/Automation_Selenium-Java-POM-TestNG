@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -21,6 +23,8 @@ public class cartAddTest extends BaseTest {
     public static List<String> priceTexts = new ArrayList<>();
 
     @Test
+    @Feature("Add to Cart")
+    @Description
     public void addToCart() throws Exception {
         for(int i=0;i<2;i++) {
             List<WebElement> multiProduct = page.getInstance(cartAdd.class).getProduct();
@@ -37,8 +41,9 @@ public class cartAddTest extends BaseTest {
         System.out.println(titles);System.out.println(prices);
         page.getInstance(cartAdd.class).getCartPage().click();
     }
-
     @Test
+    @Feature("Compare cart")
+    @Description
     public void compareCart() throws Exception {
         titleTexts.addAll(page.getInstance(cartAdd.class).getCompareTitle().stream().map(WebElement::getText).collect(Collectors.toList()));
         priceTexts.addAll(page.getInstance(cartAdd.class).getComparePrice().stream().map(WebElement::getText).collect(Collectors.toList()));
