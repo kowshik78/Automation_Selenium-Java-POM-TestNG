@@ -2,7 +2,7 @@
 Go to the other branch for project details:
 ### https://github.com/kowshik78/selenium-java-POM-testNG-automation-architecture/blob/PageFactory/README.md
 
-**This branch is created to have alternate method of grabbing locator using driver.findElementBy insted of @FindBy**
+**This branch is created to have alternate method of grabbing locator using driver.findElementBy instead of @FindBy**
 ---------------------------------------------------------------------------------------------------------------------
 
 ### driver.findElementBy
