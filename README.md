@@ -1,4 +1,6 @@
 # <strong>magento.softwaretestingboard.com</strong>
+Ready-to-use UI Test Automation Architecture using Java and Selenium WebDriver.
+
 
 This repository contains an automated testing framework for a web application, utilizing Selenium WebDriver, TestNG, and Allure for reporting. The project is structured to provide a scalable and maintainable testing environment.
 
