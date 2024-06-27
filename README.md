@@ -1,8 +1,22 @@
+# <strongSelenium Java Test Automation Architecture</strong>
 # <strong>magento.softwaretestingboard.com</strong>
 Ready-to-use UI Test Automation Architecture using Java and Selenium WebDriver.
 
+### **Installation Steps**
+- Fork the repository
+- Clone, i.e, download your copy of the repository to your local machine using
+git clone https://github.com/[your_username]/selenium-java-test-automation-architecture.git
+- Import the project in IntelliJ IDEA
+- Make your desired changes.
+- View report using AllureReport (Installation needed)
 
-This repository contains an automated testing framework for a web application, utilizing Selenium WebDriver, TestNG, and Allure for reporting. The project is structured to provide a scalable and maintainable testing environment.
+### **Languages and Frameworks**
+- Java 17 as the programming language.
+- Selenium WebDriver as the web browser automation framework using the Java binding.
+- TestNG as the testing framework.
+- Allure Reports as the test reporting strategy.
+- Maven as the Java build tool.
+- IntelliJ IDEA as the IDE.
 
 ### **Project Structure**
 ![Capture](https://github.com/kowshik78/selenium-java-POM-testNG-automation-architecture/assets/27826457/a30af22f-f2a1-452f-a852-4eee735fbe63)
@@ -11,10 +25,6 @@ This repository contains an automated testing framework for a web application, u
 - utils/Constant.java: Stores constant values used across tests, including a random email generator.
 - pages Package: Contains page object models (POMs) representing different pages of the web application.
 - tests Package: Contains test classes for each functional area of the web application.
-### **Setup Instructions**
-- Clone the repository:
-- The project requires Java 8 or higher.
-- Install dependencies, download necessary driver
 
 ### **Test Design and Methodology**
 - Each page class in the pages package represents a web page and encapsulates its elements and behaviors. This helps in maintaining the tests by separating the test logic from the page structure.
